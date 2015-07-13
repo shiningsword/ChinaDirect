@@ -1,0 +1,41 @@
+﻿@model ChinaDirect.Models.HomeViewModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>ChinaDirect</h1>
+    <p class="lead">ChinaDirect is your ultimate person to person financial solution between China and other countries.</p>
+    <p><a href="/Home/About" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+    <p><a href="/Transfers/Create" class="btn btn-primary btn-lg">Start Transfer&raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>Example</h2>
+        <table class="table">
+            <tr>
+                <td>You Send</td>
+                <td>@Html.DisplayFor(model => model.SendAmount)</td>
+                <td>USD</td>
+            </tr>
+            <tr>
+                <td>Receive</td>
+                <td>@Html.DisplayFor(model => model.ReceiveCNY)</td>
+                <td>CNY</td>
+            </tr>
+            <tr>
+                <td>You Save</td>
+                <td>@Html.DisplayFor(model => model.SaveCNY)</td>
+                <td>CNY</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-5">
+        <h2>Your Money is safe with us</h2>
+        <p>Your sensitive information is protected by Microsoft Azure storage security system with extensive encryption</p>
+        <p><a class="btn btn-default" href="http://azure.microsoft.com/en-us/support/trust-center/compliance/">Learn more &raquo;</a></p>
+    </div>
+</div>

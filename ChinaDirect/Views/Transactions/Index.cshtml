@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ChinaDirect.Models.Transaction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("View My Requests", "MyRequests", "Requests")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SenderUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RecipientUserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountSend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrencySend)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AmountReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CurrencyRecieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Message)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SenderUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RecipientUserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountSend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrencySend)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AmountReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CurrencyRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Message)
+        </td>
+        <td>
+            @*@Html.ActionLink("Edit", "Edit", new { id=item.TransactionId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TransactionId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TransactionId })*@
+        </td>
+    </tr>
+}
+
+</table>

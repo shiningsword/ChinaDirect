@@ -1,0 +1,90 @@
+﻿@model ChinaDirect.Models.Transaction
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Transaction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SenderUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SenderUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SenderUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SenderUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RecipientUserId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RecipientUserId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountSend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountSend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencySend)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencySend)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AmountReceived)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AmountReceived)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrencyRecieved)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrencyRecieved)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TransactionId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
