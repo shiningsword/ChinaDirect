@@ -20,7 +20,7 @@ namespace ChinaDirect.Controllers
             var id = Session["userID"];
             if (id == null)
             {
-                return RedirectToAction("Login", "AccountController");
+                return RedirectToAction("Login", "Account");
             }
             ViewBag.currentUser = (string)id;
             ViewBag.myRequests = false;
@@ -35,7 +35,7 @@ namespace ChinaDirect.Controllers
             var id = Session["userID"];
             if (id == null)
             {
-                return RedirectToAction("Login", "AccountController");
+                return RedirectToAction("Login", "Account");
             }
             ViewBag.currentUser = (string)id;
             ViewBag.myRequests = true;
@@ -65,7 +65,7 @@ namespace ChinaDirect.Controllers
         {
             if (Session["userID"] == null)
             {
-                return RedirectToAction("Login", "AccountController");
+                return RedirectToAction("Login", "Account");
             }
 
             return View();
@@ -83,7 +83,7 @@ namespace ChinaDirect.Controllers
                 var userId = Session["userID"];
                 if (userId == null)
                 {
-                    return RedirectToAction("Login", "AccountController");
+                    return RedirectToAction("Login", "Account");
                 }
                 request.UserId = (string)userId;
                 db.Requests.Add(request);
@@ -112,7 +112,7 @@ namespace ChinaDirect.Controllers
                 var userId = Session["userID"];
                 if (userId == null)
                 {
-                    return RedirectToAction("Login", "AccountController");
+                    return RedirectToAction("Login", "Account");
                 }
                 var query = db.Requests.Where(r =>
                     r.Currency == request.Currency &&

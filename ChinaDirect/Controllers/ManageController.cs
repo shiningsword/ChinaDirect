@@ -131,6 +131,25 @@ namespace ChinaDirect.Controllers
         }
 
         //
+        // POST: /Manage/RememberBrowser
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult RememberBrowser()
+        {
+            var rememberBrowserIdentity = AuthenticationManager.CreateTwoFactorRememberBrowserIdentity(User.Identity.GetUserId());
+            AuthenticationManager.SignIn(new AuthenticationProperties { IsPersistent = true }, rememberBrowserIdentity);
+            return RedirectToAction("Index", "Manage");
+        }
+
+        //
+        // POST: /Manage/ForgetBrowser
+        [HttpPost, ValidateAntiForgeryToken]
+        public ActionResult ForgetBrowser()
+        {
+            AuthenticationManager.SignOut(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
+            return RedirectToAction("Index", "Manage");
+        }
+
+        //
         // POST: /Manage/EnableTwoFactorAuthentication
         [HttpPost]
         [ValidateAntiForgeryToken]

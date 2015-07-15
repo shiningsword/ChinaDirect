@@ -9,6 +9,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 
+using Microsoft.AspNet.Identity;
+
 namespace ChinaDirect.Controllers
 {
     public class TransactionsController : Controller
@@ -18,13 +20,13 @@ namespace ChinaDirect.Controllers
         // GET: Transactions
         public ActionResult Index()
         {
-            var id = Session["userID"];
-            if (id == null)
+            var userId = User.Identity.GetUserId();
+            if (userId == null)
             {
                 RedirectToAction("LogOff", "AccountController");
             }
-            var myTransactions = db.Transactions.Where(r => (r.RecipientUserId == (string)id ||
-                r.SenderUserId == (string)id));
+            var myTransactions = db.Transactions.Where(r => (r.RecipientUserId == (string)userId ||
+                r.SenderUserId == (string)userId));
             return View(myTransactions.ToList());
         }
 
